@@ -1,86 +1,87 @@
 This repository contains a simple Python-based banking system simulation. The program demonstrates the use of control statements, conditional statements, and operators to perform basic banking operations such as withdrawing money, depositing money, generating a PIN, viewing a mini statement, and exiting the system. The account details are stored in a dictionary, and the program runs in a loop until the user chooses to exit
 
 
+Features
+Withdraw Money: Users can withdraw money from their account if they have sufficient balance and a valid PIN.
+
+Deposit Money: Users can deposit money into their account.
+
+Generate PIN: Users can generate a PIN for their account if one does not already exist.
+
+Mini Statement: Users can view their account details, including their name, email, mobile number, and current balance.
+
+Exit: Users can exit the program.
+
+
+
+
+
+Example Usage
+Withdraw Money
+Choose option 1 to withdraw money.
+
+Enter your account number.
+
+Enter your PIN.
+
+Enter the amount you wish to withdraw.
+
+If the withdrawal is successful, the updated balance will be displayed.
+
+Deposit Money
+Choose option 2 to deposit money.
+
+Enter your account number.
+
+Enter the amount you wish to deposit.
+
+The updated balance will be displayed.
+
+Generate PIN
+Choose option 3 to generate a PIN.
+
+Enter your account number.
+
+Enter a new PIN.
+
+The PIN will be generated and stored.
+
+Mini Statement
+Choose option 4 to view a mini statement.
+
+Enter your account number.
+
+Enter your PIN.
+
+Your account details, including name, email, mobile number, and balance, will be displayed.
+
+Exit
+Choose option 5 to exit the program.
+
+Account Information
+The program uses a predefined dictionary to store account information. Each account contains the following details:
+
+Balance: The current balance in the account.
+
+PIN: The PIN associated with the account (if generated).
+
+Email: The email address associated with the account.
+
+Name: The name of the account holder.
+
+Mobile Number: The mobile number associated with the account.
+
+Example:
+
+python
+Copy
 accounts_in_bank = {
-    11001:[1000.00,2003,"ramramo234@gmail.com","ram","900117XXXX"],
-    11002:[2234.00,1234,"laxmnn43@gmail.com","laxman","630124XXXX"],
-    11003:[7869.80,None,"hanuman3@gmail.com","hanuman","991245XXXX"],
-    11004:[500.00,1900,"seetha123@gmail.com","seetha","978456XXXX"],
-    11005:[53467.50,None,"raaavana@gmail.com","raavana","987445XXXX"],
-    }
-print(accounts_in_bank)
-while True:
-    print("")
-    print("WELCOME TO VAMSI BANK")
-    print("Choose your Option: ")
-    print("1. Withdraw")
-    print("2. Deposit")
-    print("3. Pin Generation")
-    print("4. Mini Statement")
-    print("5. Exit")
-    option = int(input("Enter Your Option: "))
-    print("")
-    if option == 1:
-        print("")
-        account_no = int(input("Enter Your Account Number: "))
-        if account_no not in accounts_in_bank:
-            print("Invalid Account Number")
-        else:
-            if accounts_in_bank[account_no][1] is None:
-                print(f"Dear {accounts[acc][3]}, Pin Not Genearted !")
-            else:
-                pin = int(input("Enter your Pin: "))
-                if accounts_in_bank[account_no][1] == pin:
-                    amt = int(input("Enter Amount: "))
-                    if accounts_in_bank[account_no][0] >= amt:
-                        accounts_in_bank[account_no][0] = accounts_in_bank[account_no][0]-amt
-                        print("Amount Withdraw sucessfull !")
-                    else:
-                        print("Insufficient Balance")
-                else:
-                    print("Invalid Pin !")
-        print("")
-    elif option == 2:
-        print("")
-        account_no = int(input("Enter Your Account Number: "))
-        if account_no not in accounts_in_bank:
-            print("Invalid Account Number")
-        else:
-            amt = int(input("Enter Amount: "))
-            accounts_in_bank[account_no][0] += amt
-            print("Deposit Sucessfull !")
-        print("")
-    elif option == 3:
-        print("")
-        account_no = int(input("Enter Your Account Number: "))
-        if account_no not in accounts_in_bank:
-            print("Invalid Account Number")
-        else:
-            if accounts_in_bank[account_no][1] is not None:
-                print("Pin Already Generated !")
-            else:
-                pin = int(input("Enter New Pin: "))
-                accounts_in_bank[account_no][1] = pin
-                print("Pin Generated Sucessfully !")
-        print("")
-    elif option == 4:
-        print("")
-        account_no = int(input("Enter Your Account Number: "))
-        if account_no not in accounts_in_bank:
-            print("Invalid Account Number")
-        else:
-            pin = int(input("Enter your Pin: "))
-            if accounts_in_bank[account_no][1] == pin:
-                print(f"Name: {accounts_in_bank[account_no][-2]}")
-                print(f"Email: {accounts_in_bank[account_no][-3]}")
-                print(f"mobile no: {accounts_in_bank[account_no][-1]}")
-                print(f"Balance: {accounts_in_bank[account_no][0]}")
-            else:
-                print("Invalid Pin !")
-        print("")
-    elif option ==5:
-        print("*")
-        print("Thank You")
-        print("Visit Again")
-        print("*")
-        break
+    11001: [1000.00, 2003, "ramramo234@gmail.com", "ram", "900117XXXX"],
+    11002: [2234.00, 1234, "laxmnn43@gmail.com", "laxman", "630124XXXX"],
+    # More accounts...
+}
+Requirements
+Python 3.x
+
+Contributing
+Contributions are welcome! If you have any suggestions or improvements, feel free to open an issue or submit a pull request
