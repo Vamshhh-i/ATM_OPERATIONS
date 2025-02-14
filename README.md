@@ -1,4 +1,4 @@
-This repository contains a simple Python-based banking system simulation. The program allows users to perform basic banking operations such as withdrawing money, depositing money, generating a PIN, viewing a mini statement, and exiting the system. The account details are stored in a dictionary, and the program runs in a loop until the user chooses to exit.
+This repository contains a simple Python-based banking system simulation. The program demonstrates the use of control statements, conditional statements, and operators to perform basic banking operations such as withdrawing money, depositing money, generating a PIN, viewing a mini statement, and exiting the system. The account details are stored in a dictionary, and the program runs in a loop until the user chooses to exit
 
 
 accounts_in_bank = {
